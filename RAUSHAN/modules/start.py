@@ -32,19 +32,14 @@ START_BUTTON = [
 @X8.on(events.NewMessage(pattern="/start"))
 @X9.on(events.NewMessage(pattern="/start"))
 @X10.on(events.NewMessage(pattern="/start"))
-async def start(event):              
+async def start(event):
     if event.is_private:
-        AltBot = await event.client.get_me()
-        bot_name = AltBot.first_name
-        bot_id = AltBot.id
-        TEXT = f"**ʜᴇʏ​ [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\nɪ ᴀᴍ [{bot_name}](tg://user?id={bot_id})​**\n━━━━━━━━━━━━━━━━━━━\n\n"
-        TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [ᴀʟᴘʜᴀ](https://t.me/ll_ALPHA_BABY_lll)**\n\n"
-        TEXT += f"» **xʙᴏᴛꜱ ᴠᴇʀsɪᴏɴ :** `M3.3`\n"
-        TEXT += f"» **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `3.11.3`\n"
-        TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{__version__}`\n━━━━━━━━━━━━━━━━━"
+        KEX = await event.client.get_me()
+        bot_name = KEX.first_name
+        bot_id = KEX.id
+        TEXT = f"**╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞‌‌‌‌★**\n**┆**\n**┊◍ ʜᴇʏ : [{event.sender.first_name}] **\n**┆◍ ɪ ᴀᴍ : [{bot_name}](tg://user?id={bot_id}) **\n**┊**\n**┆● sᴀɴᴀᴛᴀɴɪ ʙᴏᴛ ᴠᴇʀsɪᴏɴ :** `0.2`\n**┊● ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `8.2.5.1.01`\n**╰─────────────────────────**\n**──────────────────────────**\n**⦿ Oᴡɴᴇʀ - [🩵᪲᪲᪲𓍯 𝐀𝐊𝐀𝐒𝐇𓂃𓏧♡ 🌸](https://t.me/WTF_NoHope) | [🩵᪲᪲᪲𓍯 𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒𓂃𓏧♡ 🌸](https://t.me/WTF_DyHunt) **\n**──────────────────────────**\n**    ❖ Uᴘᴅᴀᴛᴇ's ⏤͟͟͞͞‌‌‌‌ [❖ ∣ Sᴀɴᴀᴛᴀɴɪ Nᴇᴛᴡᴏʀᴋ ∣ ❖](https://t.me/AnanyaBots) **\n**──────────────────────────**"
         await event.client.send_file(
-                    event.chat_id,
-                    "https://telegra.ph/file/e484dc030e63494789be5.jpg",
+                    event.chat_id,  
+                    "https://telegra.ph//file/7cfeff721589b61a2f634.jpg",
                     caption=TEXT, 
                     buttons=START_BUTTON
-                )

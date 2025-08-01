@@ -1,7 +1,5 @@
 from telethon import __version__, events, Button
-
 from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10
-
 
 START_BUTTON = [
     [
@@ -20,26 +18,33 @@ START_BUTTON = [
     ],
 ]
 
+clients = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
 
-@X1.on(events.NewMessage(pattern="/start"))
-@X2.on(events.NewMessage(pattern="/start"))
-@X3.on(events.NewMessage(pattern="/start"))
-@X4.on(events.NewMessage(pattern="/start"))
-@X5.on(events.NewMessage(pattern="/start"))
-@X6.on(events.NewMessage(pattern="/start"))
-@X7.on(events.NewMessage(pattern="/start"))
-@X7.on(events.NewMessage(pattern="/start"))
-@X8.on(events.NewMessage(pattern="/start"))
-@X9.on(events.NewMessage(pattern="/start"))
-@X10.on(events.NewMessage(pattern="/start"))
-async def start(event):
-    if event.is_private:
-        KEX = await event.client.get_me()
-        bot_name = KEX.first_name
-        bot_id = KEX.id
-        TEXT = f"**╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞‌‌‌‌★**\n**┆**\n**┊◍ ʜᴇʏ : [{event.sender.first_name}] **\n**┆◍ ɪ ᴀᴍ : [{bot_name}](tg://user?id={bot_id}) **\n**┊**\n**┆● sᴀɴᴀᴛᴀɴɪ ʙᴏᴛ ᴠᴇʀsɪᴏɴ :** `0.2`\n**┊● ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `8.2.5.1.01`\n**╰─────────────────────────**\n**──────────────────────────**\n**⦿ Oᴡɴᴇʀ - [🩵᪲᪲᪲𓍯 𝐀𝐊𝐀𝐒𝐇𓂃𓏧♡ 🌸](https://t.me/WTF_NoHope) | [🩵᪲᪲᪲𓍯 𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒𓂃𓏧♡ 🌸](https://t.me/WTF_DyHunt) **\n**──────────────────────────**\n**    ❖ Uᴘᴅᴀᴛᴇ's ⏤͟͟͞͞‌‌‌‌ [❖ ∣ Sᴀɴᴀᴛᴀɴɪ Nᴇᴛᴡᴏʀᴋ ∣ ❖](https://t.me/AnanyaBots) **\n**──────────────────────────**"
-        await event.client.send_file(
-                    event.chat_id,  
-                    "https://telegra.ph//file/7cfeff721589b61a2f634.jpg",
-                    caption=TEXT, 
-                    buttons=START_BUTTON
+for client in clients:
+    @client.on(events.NewMessage(pattern="/start"))
+    async def start(event):
+        if event.is_private:
+            KEX = await event.client.get_me()
+            bot_name = KEX.first_name
+            bot_id = KEX.id
+            TEXT = (
+                f"**╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤‌‌‌‌‌‌‌‌★**\n"
+                f"**┆**\n"
+                f"**┊◍ ʜᴇʏ : [{event.sender.first_name}] **\n"
+                f"**┆◍ ɪ ᴀᴍ : [{bot_name}](tg://user?id={bot_id}) **\n"
+                f"**┊**\n"
+                f"**┆● sᴀɴᴀᴛᴀɴɪ ʙᴏᴛ ᴠᴇʀsɪᴏɴ :** `0.2`\n"
+                f"**┊● ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{__version__}`\n"
+                f"**╰─────────────────────────**\n"
+                f"**──────────────────────────**\n"
+                f"**⦿ Oᴡɴᴇʀ - [🩵 𝐀𝐊𝐀𝐒𝐇 🌸](https://t.me/WTF_NoHope) | [🩵 𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒 🌸](https://t.me/WTF_DyHunt) **\n"
+                f"**──────────────────────────**\n"
+                f"**    ❖ Uᴘᴅᴀᴛᴇ's ⏤‌‌‌‌‌‌‌‌ [❖ ∣ Sᴀɴᴀᴛᴀɴɪ Nᴇᴛᴡᴏʀᴋ ∣ ❖](https://t.me/AnanyaBots) **\n"
+                f"**──────────────────────────**"
+            )
+            await event.client.send_file(
+                event.chat_id,
+                "https://telegra.ph//file/7cfeff721589b61a2f634.jpg",
+                caption=TEXT,
+                buttons=START_BUTTON
+            )

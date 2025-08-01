@@ -5,15 +5,19 @@ from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10
 
 START_BUTTON = [
     [
-        Button.inline("• ᴄᴏᴍᴍᴀɴᴅs •", data="help_back")
+        Button.url("🍁 ᴀᴋᴀsʜ", "https://t.me/WTF_NoHope"),
+        Button.url("ᴀɴᴏɴʏᴍᴏᴜs 🕸️", "https://t.me/WTF_DyHunt")
     ],
     [
-        Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/WORLD_ALPHA"),
-        Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/+Q25anL0Ckuk5NzM1")
+        Button.inline("🥀 ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs 🥀", data="help_back")
     ],
     [
-        Button.url("• ʀᴇᴘᴏ •", "https://github.com/TEAMPURVI/ALPHA_SPAM")
-    ]
+        Button.url("✨ ᴜᴘᴅᴀᴛᴇ", "https://t.me/AnanyaBots"),
+        Button.url("sᴜᴘᴘᴏʀᴛ ❄️", "https://t.me/AnanyaBotSupport")
+    ],
+    [
+        Button.url("🌸 ᴊᴏɪɴ ғᴏʀ sᴜᴅᴏ 🌸", "https://t.me/AnanyaAllBots")
+    ],
 ]
 
 
